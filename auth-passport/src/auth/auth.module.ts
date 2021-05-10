@@ -9,12 +9,12 @@ import { LocalStrategy } from './local.strategy';
 // ! 세션 사용할 때 provider등록
 import { SessionSerializer } from './session.serializer';
 
-// !세션 사용할 때
-// PassportModule.register({ session: true })
 @Module({
   imports: [
     UsersModule,
     PassportModule,
+    // !세션 사용할 때
+    // PassportModule.register({ session: true })
     JwtModule.register({ secret: 'tttt', signOptions: { expiresIn: '60s' } }),
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy],

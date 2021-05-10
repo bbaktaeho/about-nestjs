@@ -11,6 +11,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: any) {
+    console.log(0, 'JwtStrategy.validate', 'payload:', payload);
+
     // todo: 데이터베이스에서 유저 찾기!
     return {
       id: payload.sub,
